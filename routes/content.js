@@ -28,13 +28,25 @@ router.route('/')
       res.status(400).send(e);
     });
   })
+
+//Get all the pictures
+.get((req, res) => {
+  Picture.find((e, pictures) => {
+    if (e)
+    res.send(e);
+    res.json(pictures);
+  });
+})
 //Delete existing picture
 .delete((req, res) => {
   let name = req.body.name;
   console.log(name);
   let path = req.body.path;
-  let fspath = "public/uploads/" + path;
+  let fspath = "public" + path;
   Picture.remove({name: name}, function(e){
+    console.log(name);
+    console.log(path);
+    console.log(fspath);
     if(e)
     res.send(e);
     res.json({message: path + 'deleted!'});
