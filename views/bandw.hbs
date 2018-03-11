@@ -1,13 +1,24 @@
 {{> header}}
-      <div class="main">
-        <div class="focus">
-          <img src="/uploads/3.jpg" alt="Picture one" />
-        </div>
-        <div class="title">
-          <p>Image title </p>
-        </div>
-        <div class="controls">
-          <p>prev / next</p>
-        </div>
+    <div class="top">
+      <div class="logo">
+        <p>GABRIELE PIROVANO</p>
       </div>
+      <div class="galleryTitle">
+        <p>{{galleryTitle}}</p>
+      </div>
+      <div class="menu">
+        <p>contact</p>
+      </div>
+    </div>
+    <div class="main">
+      <div class="focus">
+        <img src="{{path}}" alt="{{picName}}" />
+      </div>
+      <div class="title">
+        <p>{{picName}}</p>
+      </div>
+      <div class="controls">
+        <p>prev / next</p>
+      </div>
+    </div>
 {{> footer}}

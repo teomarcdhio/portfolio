@@ -7,11 +7,16 @@ var upload = multer({ dest: __dirname + '/public/uploads/' });
 var app = express();
 var {mongoose} = require('./db/mongoose.js');
 var content = require('./routes/content');
+var gallery = require('./routes/gallery');
+
 
 hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view-engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
+//Required static definition to use templates on different routes eg. /content or /gallery
+app.use("/stylesheet",express.static(__dirname + "/stylesheets"));
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -19,6 +24,8 @@ app.use(bodyParser.json({limit:'50mb'})); //set file limit to 50 Mb
 app.use(bodyParser.urlencoded({limit:'50mb', extended: false, parameterLimit:50000 }));//set file limit to 50 Mb
 
 app.use('/content', content);
+
+app.use('/gallery', gallery);
 
 app.get('/', (req,res ) => {
   res.render('home.hbs',{
