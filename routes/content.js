@@ -4,30 +4,43 @@ const fs = require('fs');
 const router = express.Router();
 const multer  = require('multer');
 var upload = multer({ dest: 'public/uploads/' });
-var Picture = require('../models/picture');
-//var app = require('../server');
-var app = express();
+var {Picture} = require('../models/picture');
+var app = require('../server');
 
-app.post('/', upload.single('image'), (req,res ) => {
+router.route('/')
+//Upload new picture
+.post( upload.single('image'), (req,res ) => {
     // create a new picture
-    console.log(req.file);
-    var picture = new Picture();
-    picture.name = req.body.name;
-    picture.description = req.body.description;
-    picture.originalname = req.file.originalname;
-    picture.album = req.body.album;
+    console.log(req.file.filename);
+    req.file.filename = req.file.originalname;
     let path = req.file.path;
-    console.log(path);
-    picture.path = path.substring('public/'.length);
-    console.log(picture.path);
-    picture.dbname = req.file.filename ;
-
-    picture.save(function(err){
-      if(err)
-      res.send(err);
-      res.json({message: 'File ' + picture.originalname + ' uploaded as ' + picture.dbname + ' in location ' + picture.path });
-    });
+    let gallery_specific = req.body.gallery;
+    var picture = new Picture({
+    name : req.body.name,
+    description : req.body.description,
+    gallery : req.body.gallery,
+    path : path.substring('public'.length)
   });
+    console.log(gallery_specific);
+    picture.save().then((doc) => {
+    res.send(doc);
+    }, (e) => {
+      res.status(400).send(e);
+    });
+  })
+//Delete existing picture
+.delete((req, res) => {
+  let name = req.body.name;
+  console.log(name);
+  let path = req.body.path;
+  let fspath = "public/uploads/" + path;
+  Picture.remove({name: name}, function(e){
+    if(e)
+    res.send(e);
+    res.json({message: path + 'deleted!'});
+    fs.unlinkSync(fspath);
+  })
+});
 
 
 

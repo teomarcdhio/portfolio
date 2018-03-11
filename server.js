@@ -1,15 +1,12 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const router = express.Router();
 const multer  = require('multer');
 const bodyParser = require('body-parser');
 var upload = multer({ dest: __dirname + '/public/uploads/' });
 var app = express();
-//var uploa = require('./routes/upload');
-//var Gallery = require('./models/gallery');
-var {mongoose} = require('./db/mongoose.js')
-var {Picture} = require('./models/picture');
+var {mongoose} = require('./db/mongoose.js');
+var content = require('./routes/content');
 
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -21,7 +18,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({limit:'50mb'})); //set file limit to 50 Mb
 app.use(bodyParser.urlencoded({limit:'50mb', extended: false, parameterLimit:50000 }));//set file limit to 50 Mb
 
-// app.use('/upload', upload);
+app.use('/content', content);
 
 app.get('/', (req,res ) => {
   res.render('home.hbs',{
@@ -36,24 +33,24 @@ app.get('/bandw', (req,res ) => {
   });
 });
 
-app.post('/', upload.single('image'), (req,res ) => {
-    // create a new picture
-    console.log(req.file.filename);
-    req.file.filename = req.file.originalname;
-    let path = req.file.path;
-    var picture = new Picture({
-    name : req.body.name,
-    description : req.body.description,
-    gallery : req.body.gallery,
-    path : path.substring('public/'.length)
-  });
-
-    picture.save().then((doc) => {
-    res.send(doc);
-    }, (e) => {
-      res.status(400).send(e);
-    });
-  });
+// app.post('/', upload.single('image'), (req,res ) => {
+//     // create a new picture
+//     console.log(req.file.filename);
+//     req.file.filename = req.file.originalname;
+//     let path = req.file.path;
+//     var picture = new Picture({
+//     name : req.body.name,
+//     description : req.body.description,
+//     gallery : req.body.gallery,
+//     path : path.substring('public/'.length)
+//   });
+//
+//     picture.save().then((doc) => {
+//     res.send(doc);
+//     }, (e) => {
+//       res.status(400).send(e);
+//     });
+//   });
 
 
 // // error handler
@@ -72,3 +69,5 @@ app.post('/', upload.single('image'), (req,res ) => {
 app.listen(3000, () => {
   console.log('server is up on port 3000');
 });
+
+module.exports = app;
