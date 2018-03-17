@@ -7,14 +7,58 @@
         <p>{{galleryTitle}}</p>
       </div>
       <div class="menu">
-        <p><a href="/contact">contact</a></p>
+        <p></p>
       </div>
     </div>
     <div class="main">
-      <div class="focus">
-        <p>
-          contact page
-        </p>
+      <div class="contact_page">
+        <div class="about">
+          <p id="about">Hi there, <br /><br />I'm a photographer, explorer, and so much more.
+            I like to capture the wworld and share my experiences with as many people as possible.
+            Feel free to ge tin otuch if you woudl like to purchase any of my pictures.
+            Currently offering prints on a variety of sizes and paper quality.<br /><br />Gabriele Pirovano</p>
+        </div>
+        <div class="form">
+            <form id="testimonial form" method = "POST" action = "/contact">
+              <p>
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname">
+              </p>
+              <p>
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname">
+              </p>
+              <p style="font-size: 13.3333px;">
+                Message</br>
+                <textarea rows="10" cols="40"></textarea></br></br>
+              </p>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
       </div>
+      <!-- <div class="focus">
+        <p>
+          Contact form
+        </p>
+        <p><form id="testimonial form" method = "POST" action = "/contact">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname"></p>
+        <p>
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname"> </br>
+      </p>
+      <p>
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email address"></br>
+      </p>
+      <p>
+        Message:</br>
+        <textarea rows="10" cols="40"></textarea></br></br>
+      </p>
+        <input type="submit" value="Submit">
+    </form>
+  </p>
+      </div> -->
     </div>
 {{> footer}}
