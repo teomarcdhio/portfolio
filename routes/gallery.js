@@ -9,25 +9,26 @@ var app = require('../server');
 ObjectId = require('mongodb').ObjectID;
 
 
-router.route('/:_id')
-.get((req, res) => {
-  Picture.findById({_id: req.params._id}, function(e, gallery){
-      if (e)
-      res.send(e);
-      //let curId = `ObjectId("${gallery._id}")`;
-      let curId = gallery._id;
-      console.log(curId);
-      const xyz =  Picture.findById( { $lt: new ObjectId(curId) } ).sort({ _id: -1 }).limit(1);
-       console.log(xyz._id);
-      res.render('bandw.hbs',{
-        galleryTitle: gallery.gallery,
-        picName: gallery.name,
-        path: gallery.path,
-        picDescription: gallery.description
-      });
-  });
+router.route('/:gallery/:_id').get(async (req, res) => {
+  try {
+    const gallery = await Picture.findById(req.params._id).and({ gallery: req.params.gallery });
+    console.log('id: ', gallery._id);
+    const nextImage = await Picture.findById( { $gt: new ObjectId(gallery._id) } ).sort({ _id: 1 }).limit(1);
+    const prevImage = await Picture.findById( { $lt: new ObjectId(gallery._id) } ).sort({ _id: -1 }).limit(1);
+    //console.log('next image: ', nextImage._id);
+    //console.log('prev image: ', prevImage._id);
+    res.render('bandw.hbs',{
+      galleryTitle: gallery.gallery,
+      picName: gallery.name,
+      path: gallery.path,
+      picDescription: gallery.description,
+      nextImg: nextImage._id,
+      prevImg: prevImage._id
+    });
+  } catch(e) {
+    console.log(e);
+  }
 });
-
 // router.route('/:_id')
 //   .get(function (req, res) {
 //     let pictureObject;
