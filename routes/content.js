@@ -55,37 +55,4 @@ router.route('/')
 });
 
 
-
-
-
-//Delete existing image
-// .delete(function(req, res){
-//
-//   let dbname = req.body.dbname;
-//   let id = req.body.id;
-//   let rmpath = "public/uploads/" + dbname ;
-//   picture.remove({dbname: dbname},function(err){
-//     if(err)
-//     res.send(err);
-//     res.json({message:  dbname + ' deleted.'});
-//     fs.unlinkSync(rmpath);
-//   });
-// });
-
-//Find a picture//
-
-// router.route('/:pictureId')
-// .get(function(req, res){
-//   picture.findById(req.params.pictureId, function(err, picture){
-//       if (err)
-//       res.send(err);
-//     res.render('home.hbs',{
-//       picture: picture.name,
-//       path: picture.path,
-//       description: picture.description
-//     });
-//   });
-// });
-
-
 module.exports = router;

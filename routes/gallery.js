@@ -17,7 +17,7 @@ router.route('/:gallery/:_id').get(async (req, res) => {
     const prevImage = await Picture.findById( { $lt: new ObjectId(gallery._id) } ).sort({ _id: -1 }).limit(1);
     //console.log('next image: ', nextImage._id);
     //console.log('prev image: ', prevImage._id);
-    res.render('bandw.hbs',{
+    res.render('gallery.hbs',{
       galleryTitle: gallery.gallery,
       picName: gallery.name,
       path: gallery.path,

@@ -34,9 +34,9 @@ app.get('/', (req,res ) => {
   });
 });
 
-app.get('/bandw', (req,res ) => {
-  res.render('bandw.hbs',{
-    pageTitle: 'black and white'
+app.get('/contact', (req,res ) => {
+  res.render('contact.hbs',{
+    pageTitle: 'Contact page'
   });
 });
 

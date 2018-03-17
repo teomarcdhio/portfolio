@@ -6,6 +6,15 @@ body{
   color: grey;
 }
 
+a{
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 .top{
@@ -15,12 +24,6 @@ body{
   max-height: 7vh;
 }
 
-/*.menu{
-  clear: left;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 25px;
-}*/
 
 .logo{
   float: left;
