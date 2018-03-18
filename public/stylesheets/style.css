@@ -22,6 +22,7 @@ a:hover{
   margin-left: auto;
   margin-right: auto;
   max-height: 7vh;
+  max-width: 97vw;
 }
 
 
@@ -41,7 +42,7 @@ a:hover{
 
 .galleryTitle{
   float: left;
-  width: 33%;
+  width: 34%;
   text-align: center;
 }
 
@@ -95,7 +96,7 @@ img{
 
 .contact_page{
   clear: both;
-  max-width: 95vw;
+  max-width: 97vw;
   margin: auto;
 }
 
@@ -154,4 +155,21 @@ input[type=submit]:hover {
 
 label {
   font-size: 13.3333px;
+}
+
+.home{
+  clear: both;
+  max-width: 97vw;
+  margin: auto;
+}
+
+.home_thumb{
+  float: left;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  vertical-align: bottom;
+  padding-top: 30px;
+  line-height: normal;
+
 }
