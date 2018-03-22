@@ -8,6 +8,8 @@ var app = express();
 var {mongoose} = require('./db/mongoose.js');
 var content = require('./routes/content');
 var gallery = require('./routes/gallery');
+var {Picture} = require('./models/picture');
+
 
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -27,12 +29,35 @@ app.use('/content', content);
 
 app.use('/gallery', gallery);
 
-app.get('/', (req,res ) => {
-  res.render('home.hbs',{
-    pageTitle: 'The home page',
-    welcomeMessage: 'Hey welcome you!'
-  });
-});
+app.get('/', (async(req,res ) => {
+  try{
+    const firstColore = await Picture.findOne({"gallery": "colore"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "bandw"}).sort({ _id: 1 }).limit(1);
+    const firstAudacity = await Picture.findOne({"gallery": "audacity"}).sort({ _id: 1 }).limit(1);
+    const firstCooling = await Picture.findOne({"gallery": "cooling"}).sort({ _id: 1 }).limit(1);
+    const firstKidz = await Picture.findOne({"gallery": "kidz"}).sort({ _id: 1 }).limit(1);
+    const firstMeetmeat = await Picture.findOne({"gallery": "meetmeat"}).sort({ _id: 1 }).limit(1);
+    const firstMuse = await Picture.findOne({"gallery": "muse"}).sort({ _id: 1 }).limit(1);
+    const firstSquatinn = await Picture.findOne({"gallery": "squatinn"}).sort({ _id: 1 }).limit(1);
+    console.log(firstColore._id);
+    res.render('home.hbs',{
+      pageTitle: 'The home page',
+      welcomeMessage: 'Hey welcome you!',
+      firstColore: firstColore._id,
+      firstBandw: firstBandw._id,
+      firstAudacity: firstAudacity._id,
+      firstCooling: firstCooling._id,
+      firstKidz: firstKidz._id,
+      firstMeetmeat: firstMeetmeat._id,
+      firstMuse: firstMuse._id,
+      firstSquatinn: firstSquatinn._id,
+
+    });
+  }catch(e){
+    console.log(e);
+  };
+
+}));
 
 app.get('/contact', (req,res ) => {
   res.render('contact.hbs',{
