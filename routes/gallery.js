@@ -59,15 +59,6 @@ router.route('/:gallery/:_id').get(async (req, res) => {
         prevImg: gallery._id
       });
     };
-
-    // res.render('gallery.hbs',{
-    //   galleryTitle: gallery.gallery,
-    //   picName: gallery.name,
-    //   path: gallery.path,
-    //   picDescription: gallery.description,
-    //   nextImg: nextImage._id,
-    //   prevImg: prevImage._id
-    // });
   } catch(e) {
     console.log(e);
   }

@@ -5,10 +5,13 @@ const multer  = require('multer');
 const bodyParser = require('body-parser');
 var upload = multer({ dest: __dirname + '/public/uploads/' });
 var app = express();
-var {mongoose} = require('./db/mongoose.js');
+var { mongoose } = require('./db/mongoose.js');
 var content = require('./routes/content');
 var gallery = require('./routes/gallery');
-var {Picture} = require('./models/picture');
+var { Picture } = require('./models/picture');
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
+const sendmail = require('sendmail')();
 
 
 
@@ -32,7 +35,7 @@ app.use('/gallery', gallery);
 app.get('/', (async(req,res ) => {
   try{
     const firstColore = await Picture.findOne({"gallery": "Colore"}).sort({ _id: 1 }).limit(1);
-    const firstBandw = await Picture.findOne({"gallery": "Bandw"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "B&W"}).sort({ _id: 1 }).limit(1);
     const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
     const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
     const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
@@ -64,6 +67,31 @@ app.get('/contact', (req,res ) => {
     pageTitle: 'Contact page'
   });
 });
+
+app.post('/contact', (req, res) => {
+  var name = req.body["name"];
+  var mail = req.body["email"];
+  var body = req.body["textarea"];
+  if ( !mail) {
+    res.render('contact.hbs',{
+      pageTitle: 'Something went wrong'
+    });
+    return false;
+  }
+  sendmail({
+  from: 'contact@gabrielepirovano.com',
+  to: 'mmarcolinionline@gmail.com',
+  replyTo: 'contact@gabrielepirovano.com',
+  subject: 'Contact request from the website',
+  html: `Contact form submission from ${name} @ ${mail} <br /> ${body}`
+    }, function (err, reply) {
+      console.log(err && err.stack)
+      console.dir(reply)
+    });
+  res.render('contact.hbs',{
+    pageTitle: 'Email sent'
+  });
+})
 
 // app.post('/', upload.single('image'), (req,res ) => {
 //     // create a new picture
