@@ -36,7 +36,7 @@ app.get('/', (async(req,res ) => {
     const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
     const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
     const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
-    const firstMeetmeat = await Picture.findOne({"gallery": "Meet meat"}).sort({ _id: 1 }).limit(1);
+    const firstMeetmeat = await Picture.findOne({"gallery": "Meetmeat"}).sort({ _id: 1 }).limit(1);
     const firstMuse = await Picture.findOne({"gallery": "Muse"}).sort({ _id: 1 }).limit(1);
     const firstSquatinn = await Picture.findOne({"gallery": "Squatinn"}).sort({ _id: 1 }).limit(1);
     console.log(firstColore._id);
