@@ -31,14 +31,14 @@ app.use('/gallery', gallery);
 
 app.get('/', (async(req,res ) => {
   try{
-    const firstColore = await Picture.findOne({"gallery": "colore"}).sort({ _id: 1 }).limit(1);
-    const firstBandw = await Picture.findOne({"gallery": "bandw"}).sort({ _id: 1 }).limit(1);
-    const firstAudacity = await Picture.findOne({"gallery": "audacity"}).sort({ _id: 1 }).limit(1);
-    const firstCooling = await Picture.findOne({"gallery": "cooling"}).sort({ _id: 1 }).limit(1);
-    const firstKidz = await Picture.findOne({"gallery": "kidz"}).sort({ _id: 1 }).limit(1);
-    const firstMeetmeat = await Picture.findOne({"gallery": "meetmeat"}).sort({ _id: 1 }).limit(1);
-    const firstMuse = await Picture.findOne({"gallery": "muse"}).sort({ _id: 1 }).limit(1);
-    const firstSquatinn = await Picture.findOne({"gallery": "squatinn"}).sort({ _id: 1 }).limit(1);
+    const firstColore = await Picture.findOne({"gallery": "Colore"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "Bandw"}).sort({ _id: 1 }).limit(1);
+    const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
+    const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
+    const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
+    const firstMeetmeat = await Picture.findOne({"gallery": "Meet meat"}).sort({ _id: 1 }).limit(1);
+    const firstMuse = await Picture.findOne({"gallery": "Muse"}).sort({ _id: 1 }).limit(1);
+    const firstSquatinn = await Picture.findOne({"gallery": "Squatinn"}).sort({ _id: 1 }).limit(1);
     console.log(firstColore._id);
     res.render('home.hbs',{
       pageTitle: 'The home page',
