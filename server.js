@@ -45,6 +45,7 @@ app.get('/', (async(req,res ) => {
     console.log(firstColore._id);
     res.render('home.hbs',{
       pageTitle: 'Gabriele Pirovano Gallery',
+      galleryTitle: 'Gabriele Pirovano Gallery',
       welcomeMessage: 'Hey welcome you!',
       firstColore: firstColore._id,
       firstBandw: firstBandw._id,

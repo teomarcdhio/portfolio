@@ -21,6 +21,7 @@ router.route('/:gallery/:_id').get(async (req, res) => {
     if (nextImage != null && prevImage === null) {
       console.log('render only nextImage');
       res.render('gallery.hbs',{
+        pageTitle: gallery.gallery,
         galleryTitle: gallery.gallery,
         picName: gallery.name,
         path: gallery.path,
@@ -31,6 +32,7 @@ router.route('/:gallery/:_id').get(async (req, res) => {
     } else if (nextImage === null && prevImage != null) {
       console.log("render only prevImage");
       res.render('gallery.hbs',{
+        pageTitle: gallery.gallery,
         galleryTitle: gallery.gallery,
         picName: gallery.name,
         path: gallery.path,
@@ -41,6 +43,7 @@ router.route('/:gallery/:_id').get(async (req, res) => {
     } else if ( nextImage && prevImage ) {
       console.log("render normally");
       res.render('gallery.hbs',{
+        pageTitle: gallery.gallery,
         galleryTitle: gallery.gallery,
         picName: gallery.name,
         path: gallery.path,
@@ -51,6 +54,7 @@ router.route('/:gallery/:_id').get(async (req, res) => {
     } else {
       console.log("render without any option");
       res.render('gallery.hbs',{
+        pageTitle: gallery.gallery,
         galleryTitle: gallery.gallery,
         picName: gallery.name,
         path: gallery.path,
