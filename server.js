@@ -70,7 +70,7 @@ app.get('/contact', (req,res ) => {
 
 app.post('/contact', (req, res) => {
   var name = req.body["name"];
-  var mail = req.body["email"];
+  var email = req.body["email"];
   var body = req.body["textarea"];
   if ( !mail) {
     res.render('contact.hbs',{
@@ -79,10 +79,10 @@ app.post('/contact', (req, res) => {
     return false;
   }
   sendmail({
-  from: `${mail}`,
+  from: `${email}`,
   to: 'mmarcolinionline@gmail.com',
   subject: 'Contact request from the website',
-  html: `Contact form submission from ${name} @ ${mail} <br /> ${body}`
+  html: `Contact form submission from ${name} @ ${email} <br /> ${body}`
     }, function (err, reply) {
       console.log(err && err.stack)
       console.dir(reply)
