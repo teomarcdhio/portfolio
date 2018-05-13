@@ -44,7 +44,7 @@ app.get('/', (async(req,res ) => {
     const firstSquatinn = await Picture.findOne({"gallery": "Squatinn"}).sort({ _id: 1 }).limit(1);
     console.log(firstColore._id);
     res.render('home.hbs',{
-      pageTitle: 'The home page',
+      pageTitle: 'Gabriele Pirovano Gallery',
       welcomeMessage: 'Hey welcome you!',
       firstColore: firstColore._id,
       firstBandw: firstBandw._id,
