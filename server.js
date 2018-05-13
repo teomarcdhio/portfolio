@@ -28,7 +28,7 @@ app.use("/stylesheet",express.static(__dirname + "/stylesheets"));
 app.use(bodyParser.json({limit:'50mb'})); //set file limit to 50 Mb
 app.use(bodyParser.urlencoded({limit:'50mb', extended: false, parameterLimit:50000 }));//set file limit to 50 Mb
 
-app.use('/content', content);
+//app.use('/content', content);
 
 app.use('/gallery', gallery);
 
