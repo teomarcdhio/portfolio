@@ -80,7 +80,7 @@ app.post('/contact', (req, res) => {
   }
   sendmail({
   from: `${email}`,
-  to: 'mmarcolinionline@gmail.com',
+  to: 'Pirovano.gabri@gmail.com',
   subject: `Contact form submission from ${name} @ ${email}`,
   html: `${body}`
     }, function (err, reply) {
