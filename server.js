@@ -72,7 +72,7 @@ app.post('/contact', (req, res) => {
   var name = req.body["name"];
   var email = req.body["email"];
   var body = req.body["textarea"];
-  if ( !mail) {
+  if ( !email) {
     res.render('contact.hbs',{
       pageTitle: 'Something went wrong'
     });
@@ -81,8 +81,8 @@ app.post('/contact', (req, res) => {
   sendmail({
   from: `${email}`,
   to: 'mmarcolinionline@gmail.com',
-  subject: 'Contact request from the website',
-  html: `Contact form submission from ${name} @ ${email} <br /> ${body}`
+  subject: `Contact form submission from ${name} @ ${email}`,
+  html: `${body}`
     }, function (err, reply) {
       console.log(err && err.stack)
       console.dir(reply)
