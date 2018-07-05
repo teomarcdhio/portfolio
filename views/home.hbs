@@ -1,49 +1,36 @@
 {{> header}}
-    <div class="top">
-      <div class="logo">
-        <p>GABRIELE PIROVANO</p>
-      </div>
-      <div class="galleryTitle">
-        <p>{{galleryTitle}}</p>
+  <div class="left">
+    <div class="main">
+      <div class="title">
+        <a href="/"><p id="title">GABRIELE PIROVANO</p></a>
       </div>
       <div class="menu">
-        <p><a href="/contact">Contact me</a></p>
+        <a href="/gallery/Audacity/{{firstAudacity}}"><p>Audacity</p></a>
+        <a href="/gallery/Colore/{{firstColore}}"><p>Colore</p></a>
+        <a href="/gallery/B&W/{{firstBandw}}"><p>B&W</p></a>
+        <a href="/gallery/Cooling/{{firstCooling}}"><p>Cooling</p></a>
+        <a href="/gallery/Kidz/{{firstKidz}}"><p>Kidz</p></a>
+        <a href="/gallery/Meetmeat/{{firstMeetmeat}}"><p>Meet meat</p></a>
+        <a href="/gallery/Muse/{{firstMuse}}"><p>Muse</p></a>
+        <a href="/gallery/Squatinn/{{firstSquatinn}}"><p>Squatt Inn</p></a>
+        <a href="mailto:Pirovano.gabri@gmail.com" target="_top"><p id="contact">Contact</p></a>
+      </div>
+      <div class="copyright">
+        <p id="copyright">All images &copy; Gabriele Pirovano</p>
       </div>
     </div>
+  </div>
+  <div class="right">
     <div class="main">
-      <div class="home">
-        <div class="home_thumb">
-          <a href="/gallery/Audacity/{{firstAudacity}}"><img src="front/audacity.jpg" width="80%" />
-          <p>Audacity</p></a>
-        </div>
-        <div class="home_thumb">
-        <a href="/gallery/Colore/{{firstColore}}"><img src="front/colore.jpg" width="80%" />
-            <p>Colore</p></a>
-        </div>
-        <div class="home_thumb">
-            <a href="/gallery/B&W/{{firstBandw}}"><img src="front/bandw.jpg" width="80%" />
-            <p>B&W</p></a>
-        </div>
-        <div class="home_thumb">
-          <a href="/gallery/Cooling/{{firstCooling}}"><img src="front/cooling.jpg" width="80%" />
-            <p>Cooling</p></a>
-        </div>
-        <div class="home_thumb">
-          <a href="/gallery/Kidz/{{firstKidz}}"><img src="front/kidz.jpg" width="80%" />
-            <p>Kidz</p></a>
-        </div>
-        <div class="home_thumb">
-          <a href="/gallery/Meetmeat/{{firstMeetmeat}}"><img src="front/meetmeat.jpg" width="80%" />
-            <p>Meet meat</p></a>
-        </div>
-        <div class="home_thumb">
-          <a href="/gallery/Muse/{{firstMuse}}"><img src="front/muse.jpg" width="80%" />
-            <p>Muse</p></a>
-        </div>
-        <div class="home_thumb">
-          <a href="/gallery/Squatinn/{{firstSquatinn}}"><img src="front/squatinn.jpg" width="80%" />
-            <p>Squatt Inn</p></a>
-        </div>
+      <div class="pictureTitle">
+        <p>Carabinieri</p>
+      </div>
+      <div class="focus">
+        <img src="http://gabrielepirovano.com/uploads/167035f288e45667877f990d5b60006c" alt="Carabinieri" />
+      </div>
+      <div class="controls">
+        <p><a href="/gallery/{{galleryTitle}}/{{prevImg}}">&lt; prev</a> | <a href="/gallery/{{galleryTitle}}/{{nextImg}}">next &gt;</a></p>
       </div>
     </div>
+  </div>
 {{> footer}}
