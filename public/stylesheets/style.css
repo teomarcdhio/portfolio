@@ -20,7 +20,8 @@ a:hover{
 .left{
   float: left;
   width: 22vw;
-  max-height: 97vh;
+  padding-top: 4vh;
+  max-height: 95vh;
   max-width: 30vw;
   padding-left: 2vw;
 }
@@ -42,14 +43,14 @@ a:hover{
 
 .menu{
   text-align: left;
-  padding-top: 1%;
+  padding-top: 17vh;
   padding-bottom: 1%;
   padding-left: 10px;
   padding-right: 10px;
   clear: both;
   max-height: 90vh;
   max-width: 95vw;
-  height: 85vh;
+  height: 60vh;
   margin: auto;
   font-size: 14px;
 }
@@ -57,7 +58,8 @@ a:hover{
 
 .right{
   float: left;
-  max-height: 97vh;
+  padding-top: 4vh;
+  max-height: 95vh;
   max-width: 68vw;
 }
 
@@ -71,8 +73,8 @@ a:hover{
   clear: both;
   padding-top: 1%;
   padding-bottom: 1%;
-  max-height: 85vh;
-  max-width: 95vw;
+  max-height: 75vh;
+  max-width: 75vw;
   margin: auto;
 }
 
