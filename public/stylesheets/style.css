@@ -33,7 +33,7 @@ a:hover{
 }
 
 #copyright{
-  font-size: 12px;
+  font-size: 10px;
   text-align: left;
 }
 
@@ -43,14 +43,14 @@ a:hover{
 
 .menu{
   text-align: left;
-  padding-top: 16.5vh;
+  padding-top: 12.5vh;
   padding-bottom: 1%;
   padding-left: 10px;
   padding-right: 10px;
   clear: both;
   max-height: 90vh;
   max-width: 95vw;
-  height: 60vh;
+  height: 65vh;
   margin: auto;
   font-size: 14px;
 }
@@ -83,23 +83,26 @@ a:hover{
   text-align: left;
   width: 100%;
   padding-bottom: 0px;
-  max-height: 4vh;
+  height: 10vh;
+  max-height: 10vh;
   padding-left: 10px;
 }
 
 .pictureTitle{
   float: left;
-  text-align: right;
+  text-align: left;
   width: 100%;
   padding-bottom: 0px;
   max-height: 4vh;
+  font-size: 10px;
 }
 
 .controls{
   float: right;
-  text-align: right;
+  text-align: left;
   width: 100%;
   max-height: 4vh;
+  font-size: 10px;
 }
 
 .copyright{
