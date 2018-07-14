@@ -1,9 +1,8 @@
 {{> header}}
   <div class="left">
-    <div class="main">
       <div class="title">
-        <a href="/"><p id="title">GABRIELE <br/></p>
-        <p id="title">PIROVANO</p></a>
+        <a href="/"><p>GABRIELE <br/></p>
+        <p>PIROVANO</p></a>
       </div>
       <div class="menu">
         <a href="/gallery/Audacity/{{firstAudacity}}"><p>Audacity</p></a>
@@ -16,22 +15,21 @@
         <a href="/gallery/Squatinn/{{firstSquatinn}}"><p>Squatt Inn</p></a>
         <a href="mailto:Pirovano.gabri@gmail.com" target="_top"><p id="contact">Contact</p></a>
       </div>
-      <div class="copyright">
-        <p id="copyright">All images &copy; Gabriele Pirovano</p>
+      <div class="pictureTitle">
+        <p>{{picName}}</p>
       </div>
-    </div>
   </div>
   <div class="right">
-    <div class="main">
-      <div class="pictureTitle">
-        <p><a href="/gallery/{{galleryTitle}}/{{prevImg}}">&lt; prev</a> | <a href="/gallery/{{galleryTitle}}/{{nextImg}}">next &gt;</a></p>
-      </div>
+
+        <!-- <p><a href="/gallery/{{galleryTitle}}/{{prevImg}}">&lt; prev</a> | <a href="/gallery/{{galleryTitle}}/{{nextImg}}">next &gt;</a></p>
+        -->
       <div class="focus">
+        <div class="moveLeft" onclick="location.href='/gallery/{{galleryTitle}}/{{prevImg}}';"  >
+        </div>
         <img src="{{path}}" alt="{{picName}}" />
+        <div class="moveRight" onclick="location.href='/gallery/{{galleryTitle}}/{{nextImg}}';" >
+        </div>
       </div>
-      <div class="controls">
-          <p>{{picName}}</p>
-      </div>
-    </div>
+
   </div>
 {{> footer}}

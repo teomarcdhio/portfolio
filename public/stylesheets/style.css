@@ -7,95 +7,100 @@ body{
 }
 
 a{
-  color: grey;
+  color: black;
   text-decoration: none;
 }
 
 a:hover{
-  color: black;
+  color: grey;
 }
+
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 .left{
   float: left;
   width: 22vw;
-  padding-top: 4vh;
+  padding-top: 1vh;
   max-height: 95vh;
-  max-width: 30vw;
-  padding-left: 2vw;
+  max-width: 22vw;
+  padding-left: 1vw;
 }
 
-#title{
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-}
-
-#copyright{
-  font-size: 10px;
-  text-align: left;
-}
-
-#contact{
-  padding-top: 2%;
-}
-
-.menu{
-  text-align: left;
-  padding-top: 12.5vh;
-  padding-bottom: 1%;
-  padding-left: 10px;
-  padding-right: 10px;
-  clear: both;
-  max-height: 90vh;
-  max-width: 95vw;
-  height: 65vh;
-  margin: auto;
-  font-size: 14px;
-}
-
-
-.right{
-  float: left;
-  padding-top: 4vh;
-  max-height: 95vh;
-  max-width: 68vw;
-}
-
-.main{
-  clear: left;
-  max-height: 90vh;
-  margin: auto;
-}
-
-.focus{
-  clear: both;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  max-height: 75vh;
-  max-width: 75vw;
-  margin: auto;
-}
 
 .title{
   float: left;
   text-align: left;
   width: 100%;
-  padding-bottom: 0px;
-  height: 10vh;
-  max-height: 10vh;
-  padding-left: 10px;
+  font-size: 16px;
+}
+
+.menu{
+  float: left;
+  text-align: left;
+  width: 100%;
+  clear: both;
+  margin: auto;
+  font-size: 12px;
+  padding-top: 24px;
+  line-height: 10px;
 }
 
 .pictureTitle{
   float: left;
   text-align: left;
   width: 100%;
-  padding-bottom: 0px;
-  max-height: 4vh;
   font-size: 10px;
+  padding-top: 46vh;
+  color: black;
 }
+
+
+.right{
+  float: left;
+  width: 67vw;
+  padding-top: 2vh;
+  max-height: 95vh;
+  max-width: 70vw;
+  padding-right: 2vw;
+}
+
+
+.focus{
+  clear: both;
+  padding-top: 2vh;
+  max-height: 90vh;
+  max-width: 69vw;
+  margin: auto;
+  z-index: 0;
+}
+
+.moveLeft{
+  z-index: 1;
+  position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 34vw; /* Full width (cover the whole page) */
+    height: 94vh; /* Full height (cover the whole page) */
+    top: 5vh;
+    left: 24vw;
+    right: 0;
+    bottom: 0;
+  cursor: pointer;
+}
+
+.moveRight{
+  z-index: 1;
+  position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 34vw; /* Full width (cover the whole page) */
+    height: 94vh; /* Full height (cover the whole page) */
+    top: 5vh;
+    left: 57vw;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
 
 .controls{
   float: right;
@@ -105,30 +110,7 @@ a:hover{
   font-size: 10px;
 }
 
-.copyright{
-  float: left;
-  text-align: left;
-  width: 100%;
-  max-height: 4vh;
-  padding-left: 10px;
-}
 
-
-
-
-
-
-
-.info{
-  clear: left;
-  margin: auto;
-}
-
-.footer{
-  clear: left;
-  margin: auto;
-  max-height: 8vh;
-}
 
 img{
   max-width: inherit;;
