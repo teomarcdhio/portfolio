@@ -63,11 +63,36 @@ app.get('/', (async(req,res ) => {
 
 }));
 
-app.get('/contact', (req,res ) => {
-  res.render('contact.hbs',{
-    pageTitle: 'Contact page'
-  });
-});
+app.get('/selection', (async(req,res ) => {
+  try{
+    const firstColore = await Picture.findOne({"gallery": "Colore"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "B&W"}).sort({ _id: 1 }).limit(1);
+    const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
+    const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
+    const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
+    const firstMeetmeat = await Picture.findOne({"gallery": "Meetmeat"}).sort({ _id: 1 }).limit(1);
+    const firstMuse = await Picture.findOne({"gallery": "Muse"}).sort({ _id: 1 }).limit(1);
+    const firstSquatinn = await Picture.findOne({"gallery": "Squatinn"}).sort({ _id: 1 }).limit(1);
+    console.log(firstColore._id);
+    res.render('selection.hbs',{
+      pageTitle: 'Gabriele Pirovano Gallery',
+      galleryTitle: 'Gabriele Pirovano Gallery',
+      welcomeMessage: 'Hey welcome you!',
+      firstColore: firstColore._id,
+      firstBandw: firstBandw._id,
+      firstAudacity: firstAudacity._id,
+      firstCooling: firstCooling._id,
+      firstKidz: firstKidz._id,
+      firstMeetmeat: firstMeetmeat._id,
+      firstMuse: firstMuse._id,
+      firstSquatinn: firstSquatinn._id,
+
+    });
+  }catch(e){
+    console.log(e);
+  };
+
+}));
 
 app.post('/contact', (req, res) => {
   var name = req.body["name"];
