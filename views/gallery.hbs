@@ -1,13 +1,7 @@
 {{> header}}
     <div class="top">
-      <div class="logo">
-        <p><a href="/">GABRIELE PIROVANO</a></p>
-      </div>
       <div class="galleryTitle">
         <p>{{galleryTitle}}</p>
-      </div>
-      <div class="menu">
-        <p><a href="/contact">Contact me</a></p>
       </div>
     </div>
     <div class="main">
@@ -15,10 +9,10 @@
         <img src="{{path}}" alt="{{picName}}" />
       </div>
       <div class="title">
-        <p>{{picName}}</p>
+        <p><a href="/gallery/{{galleryTitle}}/{{prevImg}}">&lt;</a><span id="title">{{picName}}</span><a href="/gallery/{{galleryTitle}}/{{nextImg}}">&gt;</a></p>
       </div>
-      <div class="controls">
-        <p><a href="/gallery/{{galleryTitle}}/{{prevImg}}">&lt; prev</a> | <a href="/gallery/{{galleryTitle}}/{{nextImg}}">next &gt;</a></p>
-      </div>
+    </div>
+    <div class="menu">
+      <p><a href="/">HOME</a><span id="button"> <a href="/selection">GALLERY</a></span><a href="mailto:Pirovano.gabri@gmail.com" target="_top">CONTACT ME</a></p>
     </div>
 {{> footer}}
