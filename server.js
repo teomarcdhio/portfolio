@@ -35,7 +35,7 @@ app.use('/gallery', gallery);
 app.get('/', (async(req,res ) => {
   try{
     const firstColore = await Picture.findOne({"gallery": "Colore"}).sort({ _id: 1 }).limit(1);
-    const firstBandw = await Picture.findOne({"gallery": "B&W"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "Bandw"}).sort({ _id: 1 }).limit(1);
     const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
     const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
     const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
@@ -66,7 +66,7 @@ app.get('/', (async(req,res ) => {
 app.get('/selection', (async(req,res ) => {
   try{
     const firstColore = await Picture.findOne({"gallery": "Colore"}).sort({ _id: 1 }).limit(1);
-    const firstBandw = await Picture.findOne({"gallery": "B&W"}).sort({ _id: 1 }).limit(1);
+    const firstBandw = await Picture.findOne({"gallery": "Bandw"}).sort({ _id: 1 }).limit(1);
     const firstAudacity = await Picture.findOne({"gallery": "Audacity"}).sort({ _id: 1 }).limit(1);
     const firstCooling = await Picture.findOne({"gallery": "Cooling"}).sort({ _id: 1 }).limit(1);
     const firstKidz = await Picture.findOne({"gallery": "Kidz"}).sort({ _id: 1 }).limit(1);
